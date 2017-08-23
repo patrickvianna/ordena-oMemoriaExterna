@@ -94,7 +94,7 @@ arq21 = open("Arquivo2-1.txt", 'a')
 chegou = False
 while chegou == False:
     if cont1 < 2 or arq1Fechado == True:
-        if linhaDo1 <= linhaDo2 and linhaDo1 <= linhaDo2:
+        if linhaDo1 <= linhaDo2 and linhaDo1 <= linhaDo3: #O ERRO ESTAVA AQUI, FDP!!!!
             #arq21 = open("Arquivo2-1.txt", 'a')
             arq21.writelines(linhaDo1)
             #arq21.close()
