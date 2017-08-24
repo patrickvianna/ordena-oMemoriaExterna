@@ -153,18 +153,24 @@ while chegou == False:
         chegou = True
         arq21.close()
         print("CHEGUEI NO FINAL DO 2")
-
+'''
     if arq1Fechado == 1 and arq2Fechado == 1 and arq3Fechado == 1:
         print("ENTREI")
         arq1Fechado = arq2Fechado = arq3Fechado = 0
-        #linhaDo1 = arq1.readline()
+        ##
+        linhaDo1 = arq1.readline()
         if linhaDo1 != '':
             linhaDo1 = int(arq1.readline())
+        ##
+        linhaDo2 = arq2.readline()
         if linhaDo2 != '':
             linhaDo2 = int(arq2.readline())
+        ##
+            linhaDo3 = arq3.readline()
         if linhaDo3 != '':
             linhaDo3 = int(arq3.readline())
-
     #else:
     #    print("TIVE QUE SAIR, SORRY")
     #    chegou = True
+
+'''
