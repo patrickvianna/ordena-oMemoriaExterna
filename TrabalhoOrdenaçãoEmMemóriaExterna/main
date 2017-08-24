@@ -75,12 +75,12 @@ arq3 = open("Arquivo1-3.txt", 'r')
 arq21 = open("Arquivo2-1.txt", 'w')
 arq21.close()
 
-linhaDo1 = arq1.readline()
-linhaDo2 = arq2.readline()
-linhaDo3 = arq3.readline()
-print("1:::", linhaDo1)
-print("2:::", linhaDo2)
-print("3:::", linhaDo3)
+linhaDo1 = int(arq1.readline())
+linhaDo2 = int(arq2.readline())
+linhaDo3 = int(arq3.readline())
+print("1:::", linhaDo1, " -- TIPO - ", type(linhaDo1))
+print("2:::", linhaDo2, " -- TIPO - ", type(linhaDo2))
+print("3:::", linhaDo3, " -- TIPO - ", type(linhaDo3))
 
 cont1 = 0
 cont2 = 0
@@ -94,11 +94,12 @@ arq21 = open("Arquivo2-1.txt", 'a')
 chegou = False
 while chegou == False:
     if cont1 < 2 or arq1Fechado == True:
-        if linhaDo1 <= linhaDo2 and linhaDo1 <= linhaDo3: #O ERRO ESTAVA AQUI, FDP!!!!
+        if linhaDo1 <= linhaDo2 and linhaDo1 <= linhaDo3:
             #arq21 = open("Arquivo2-1.txt", 'a')
+            linhaDo1 = str(linhaDo1)
             arq21.writelines(linhaDo1)
             #arq21.close()
-            linhaDo1 = arq1.readline()
+            linhaDo1 = int(arq1.readline())
             print("1:::", linhaDo1)
             if linhaDo1 == '':              ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
                 arq1.close()
@@ -110,9 +111,10 @@ while chegou == False:
     if cont2 < 2 or arq2Fechado == True:
         if linhaDo2 <= linhaDo1 and linhaDo2 <= linhaDo3:
             #arq21 = open("Arquivo2-1.txt", 'a')
+            linhaDo2 = str(linhaDo2)                    #TRANSFORMANDO NOVAMENTE PARA STRING PARA JOGAR PARA O ARQUIVO (SACO)
             arq21.writelines(linhaDo2)
             #arq21.close()
-            linhaDo2 = arq2.readline()
+            linhaDo2 = int(arq2.readline())
             print("2:::", linhaDo2)
             if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
                 arq2.close()
@@ -124,9 +126,10 @@ while chegou == False:
     if cont3 < 2 or arq3Fechado == True:
         if linhaDo3 <= linhaDo1 and linhaDo3 <= linhaDo2:
             #arq21 = open("Arquivo2-1.txt", 'a')
+            linhaDo3 = str(linhaDo3)
             arq21.writelines(linhaDo3)
             #arq21.close()
-            linhaDo3 = arq3.readline()
+            linhaDo3 = int(arq3.readline())
             print("3:::", linhaDo3)
             if linhaDo3 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
                 arq3.close()
@@ -145,3 +148,6 @@ while chegou == False:
         if arq1Fechado == False: cont1 = 0
         if arq2Fechado == False: cont2 = 0
         if arq3Fechado == False: cont3 = 0
+    #else:
+    #    print("TIVE QUE SAIR, SORRY")
+    #    chegou = True
