@@ -2,61 +2,61 @@ import math
 
 ########################
 
+chegou = False
+cont = 0
+i = 0
+bolaDaVez = ["Arquivo1-1.txt", "Arquivo1-2.txt", "Arquivo1-3.txt"]
+a = ["Arquivo2-1.txt", "Arquivo2-2.txt", "Arquivo2-3.txt"]
+vetAux = []  ## VETOR AUXILIAR PARA ORGANIZAR
+## ABRE TODOS OS PRIMEIROS ARQUIVOS AUXILIARES EM BRANCO
+arq1 = open("Arquivo1-1.txt", 'w')
+arq2 = open("Arquivo1-2.txt", 'w')
+arq3 = open("Arquivo1-3.txt", 'w')
+## FECHA
+arq1.close()
+arq2.close()
+arq3.close()
+
+## PARTE 1
+
+arquivoOriginal = open("Arquivo Original.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
+
+while chegou == False:
+    linha = arquivoOriginal.readline()  ## LE CADA LINHA DO ARQUIVO ORIGINAL
+    if linha == '':  ## SE A LINHA ATUAL É O FINAL, PARE
+        chegou = True
+        vetAux.sort()
+        arq = open(bolaDaVez[i], 'a')
+        arq.writelines(vetAux)
+        arq.close()
+        print("CHEGOU NO FINAL DO 1")
+    else:
+        if cont < 2:
+            vetAux.append(linha)
+            cont += 1
+        else:
+            vetAux.append(linha)
+            vetAux.sort()
+            arq = open(bolaDaVez[i], 'a')  ## ABRE PARA ATUALIZAR
+            vetAux.append('-\n')
+            arq.writelines(vetAux)  ## ESCREVE O VETOR AUXILIAR NO FINAL DO ARQUIVO
+            arq.close()
+            cont = 0
+            vetAux.clear()  ##LIMPA O VETOR AUXILIAR
+            if i == 2:
+                i = 0
+            else:
+                i += 1
+
+arquivoOriginal.close()
+
+
 n = 700 ## NUMERO DE REGISTROS
 m = 3 ##
 f = 6 ## NUMERO DE FITAS
 
 passada = 0
 while passada <= math.ceil(math.log(n/m)/math.log(f)):
-    chegou = False
-    cont = 0
-    i = 0
-    bolaDaVez = ["Arquivo1-1.txt", "Arquivo1-2.txt", "Arquivo1-3.txt"]
-    vetAux = []  ## VETOR AUXILIAR PARA ORGANIZAR
-    ## ABRE TODOS OS PRIMEIROS ARQUIVOS AUXILIARES EM BRANCO
-    arq1 = open("Arquivo1-1.txt", 'w')
-    arq2 = open("Arquivo1-2.txt", 'w')
-    arq3 = open("Arquivo1-3.txt", 'w')
-    ## FECHA
-    arq1.close()
-    arq2.close()
-    arq3.close()
-
-    ## PARTE 1
-
-    if passada == 0:
-        arquivoOriginal = open("Arquivo Primario.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
-    else:
-        arquivoOriginal = open("Arquivo.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
-
-    while chegou == False:
-        linha = arquivoOriginal.readline()  ## LE CADA LINHA DO ARQUIVO ORIGINAL
-        if linha == '':  ## SE A LINHA ATUAL É O FINAL, PARE
-            chegou = True
-            vetAux.sort()
-            arq = open(bolaDaVez[i], 'a')
-            arq.writelines(vetAux)
-            arq.close()
-            print("CHEGOU NO FINAL DO 1")
-        else:
-            if cont < 2:
-                vetAux.append(linha)
-                cont += 1
-            else:
-                vetAux.append(linha)
-                vetAux.sort()
-                arq = open(bolaDaVez[i], 'a')  ## ABRE PARA ATUALIZAR
-                vetAux.append('-\n')
-                arq.writelines(vetAux)  ## ESCREVE O VETOR AUXILIAR NO FINAL DO ARQUIVO
-                arq.close()
-                cont = 0
-                vetAux.clear()  ##LIMPA O VETOR AUXILIAR
-                if i == 2:
-                    i = 0
-                else:
-                    i += 1
-
-    arquivoOriginal.close()
 
     ## PARTE 2
     arq1 = open("Arquivo1-1.txt", 'r')
@@ -74,14 +74,12 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
     arq2Fechado = 0
     arq3Fechado = 0
 
-    a = ["Arquivo2-1.txt", "Arquivo2-2.txt", "Arquivo2-3.txt"]
+
     i = 0
     while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
         arq21 = open(a[i], 'a')
 
         linhaDo1 = arq1.readline()
-        if linhaDo1 == '-\n':
-            linhaDo1 = 12
         if linhaDo1 != '':
             linhaDo1 = int(linhaDo1)
             arq1Fechado = 0
@@ -151,7 +149,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
                     linhaDo3 = 999
                 else:
                     linhaDo3 = int(linhaDo3)
-
+        arq21.writelines('-\n')
         arq21.close()
         if i == 2:
             i = 0
@@ -162,9 +160,19 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
 
     ## PARTE 3
 
+    ## ABRE OS ARQUIVOS PARA LEITURA
     arq21 = open("Arquivo2-1.txt", 'r')
     arq22 = open("Arquivo2-2.txt", 'r')
     arq23 = open("Arquivo2-3.txt", 'r')
+
+    ## ABRE E FECHA AS 3 PRIMEIRAS FITAS PARA ZERA-LAS
+    arq11 = open("Arquivo1-1.txt", 'w')
+    arq12 = open("Arquivo1-2.txt", 'w')
+    arq13 = open("Arquivo1-3.txt", 'w')
+
+    arq11.close()
+    arq12.close()
+    arq13.close()
 
     linhaDo1 = int(arq21.readline())
     linhaDo2 = int(arq22.readline())
@@ -173,13 +181,97 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
     print("2 -- ", linhaDo2)
     print("3 -- ", linhaDo3)
 
-
     arq = open("Arquivo.txt", 'w')
 
     arq1Fechado = 0
     arq2Fechado = 0
     arq3Fechado = 0
     i = 0
+
+    ############
+    while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
+        arq = open(bolaDaVez[i], 'a')
+
+        linhaDo1 = arq21.readline()
+        if linhaDo1 != '':
+            linhaDo1 = int(linhaDo1)
+            arq1Fechado = 0
+        else:
+            arq1.close()
+            arq1Fechado = 2
+            linhaDo1 = 9000
+        #####
+        linhaDo2 = arq22.readline()
+        if linhaDo2 != '':
+            linhaDo2 = int(linhaDo2)
+            arq2Fechado = 0
+        else:
+            arq2.close()
+            arq2Fechado = 2
+            linhaDo2 = 9000
+        ####
+        linhaDo3 = arq23.readline()
+        if linhaDo3 != '':
+            linhaDo3 = int(linhaDo3)
+            arq3Fechado = 0
+        else:
+            arq3.close()
+            arq3Fechado = 2
+            linhaDo3 = 9000
+
+        while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
+            if linhaDo1 < linhaDo2 and linhaDo1 and linhaDo3 and arq1Fechado == 0:
+                # arq21 = open("Arquivo2-1.txt", 'a')
+                linhaDo1 = str(linhaDo1) + '\n'
+                arq.writelines(linhaDo1)
+                # arq21.close()
+                linhaDo1 = arq21.readline()
+                if linhaDo1 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                    arq1.close()
+                    arq1Fechado = 2
+                    linhaDo1 = 999
+                if linhaDo1 == "-\n":
+                    arq1Fechado = 1
+                    linhaDo1 = 999
+                else:
+                    linhaDo1 = int(linhaDo1)
+            if arq2Fechado == 0 and linhaDo2 < linhaDo1 and linhaDo2 < linhaDo3:
+                linhaDo2 = str(linhaDo2) + '\n'  # TRANSFORMANDO NOVAMENTE PARA STRING PARA JOGAR PARA O ARQUIVO (SACO)
+                arq.writelines(linhaDo2)
+                linhaDo2 = arq22.readline()
+                cont = 0
+                if linhaDo2 == '-\n':
+                    linhaDo2 = 999
+                    arq2Fechado = 1
+                if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                    arq2.close()
+                    arq2Fechado = 2
+                    linhaDo2 = 999
+                else:
+                    linhaDo2 = int(linhaDo2)
+            if arq3Fechado == 0 and linhaDo3 < linhaDo1 and linhaDo3 < linhaDo2:
+                linhaDo3 = str(linhaDo3) + '\n'
+                arq.writelines(linhaDo3)
+                linhaDo3 = arq23.readline()
+                if linhaDo3 == "-\n":
+                    linhaDo3 = 999
+                    arq3Fechado = 1
+                if linhaDo3 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                    arq3.close()
+                    arq3Fechado = 2
+                    linhaDo3 = 999
+                else:
+                    linhaDo3 = int(linhaDo3)
+        arq.writelines('-\n')
+        arq.close()
+        if i == 2:
+            i = 0
+        else:
+            i += 1
+    ##########
+
+    print("CHEGOU NO FINAL DO 3")
+    '''
     while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
         if linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
             linhaDo1 = str(linhaDo1) + '\n'
@@ -213,5 +305,5 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
             else:
                 linhaDo3 = int(linhaDo3)
     arq.close()
-
+'''
     passada += 1
