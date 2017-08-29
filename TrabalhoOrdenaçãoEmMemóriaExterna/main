@@ -19,7 +19,7 @@ arq3.close()
 
 ## PARTE 1
 
-arquivoOriginal = open("Arquivo Original.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
+arquivoOriginal = open("Arquivo Primario.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
 
 while chegou == False:
     linha = arquivoOriginal.readline()  ## LE CADA LINHA DO ARQUIVO ORIGINAL
