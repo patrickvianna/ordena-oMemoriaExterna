@@ -51,12 +51,15 @@ while chegou == False:
 arquivoOriginal.close()
 
 
-n = 700 ## NUMERO DE REGISTROS
+n = 173 ## NUMERO DE REGISTROS
 m = 3 ##
 f = 6 ## NUMERO DE FITAS
 
 passada = 0
-while passada <= math.ceil(math.log(n/m)/math.log(f)):
+
+#print(math.log(n/m)/math.log(f))
+#print(math.ceil(math.log(n/m)/math.log(f)))
+while passada < 3 :
 
     ## PARTE 2
     arq1 = open("Arquivo1-1.txt", 'r')
@@ -74,12 +77,14 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
     arq2Fechado = 0
     arq3Fechado = 0
 
-
+    # 2
     i = 0
     while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
         arq21 = open(a[i], 'a')
 
         linhaDo1 = arq1.readline()
+        if linhaDo1 == '-\n':
+            linhaDo1 = arq1.readline()
         if linhaDo1 != '':
             linhaDo1 = int(linhaDo1)
             arq1Fechado = 0
@@ -89,6 +94,8 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
             linhaDo1 = 9000
         #####
         linhaDo2 = arq2.readline()
+        if linhaDo2 == '-\n':
+            linhaDo2 = arq2.readline()
         if linhaDo2 != '':
             linhaDo2 = int(linhaDo2)
             arq2Fechado = 0
@@ -98,6 +105,8 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
             linhaDo2 = 9000
         ####
         linhaDo3 = arq3.readline()
+        if linhaDo3 == '-\n':
+            linhaDo3 = arq3.readline()
         if linhaDo3 != '':
             linhaDo3 = int(linhaDo3)
             arq3Fechado = 0
@@ -107,11 +116,9 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
             linhaDo3 = 9000
 
         while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0 :
-            if linhaDo1 < linhaDo2 and linhaDo1 and linhaDo3 and arq1Fechado == 0:
-                # arq21 = open("Arquivo2-1.txt", 'a')
+            if arq1Fechado == 0 and linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
                 linhaDo1 = str(linhaDo1) + '\n'
                 arq21.writelines(linhaDo1)
-                # arq21.close()
                 linhaDo1 = arq1.readline()
                 if linhaDo1 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
                     arq1.close()
@@ -149,8 +156,9 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
                     linhaDo3 = 999
                 else:
                     linhaDo3 = int(linhaDo3)
-        arq21.writelines('-\n')
-        arq21.close()
+        if arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
+            arq21.writelines('-\n')
+            arq21.close()
         if i == 2:
             i = 0
         else:
@@ -164,7 +172,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
     arq21 = open("Arquivo2-1.txt", 'r')
     arq22 = open("Arquivo2-2.txt", 'r')
     arq23 = open("Arquivo2-3.txt", 'r')
-
+    arroz = 0
     ## ABRE E FECHA AS 3 PRIMEIRAS FITAS PARA ZERA-LAS
     arq11 = open("Arquivo1-1.txt", 'w')
     arq12 = open("Arquivo1-2.txt", 'w')
@@ -220,7 +228,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
             linhaDo3 = 9000
 
         while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
-            if linhaDo1 < linhaDo2 and linhaDo1 and linhaDo3 and arq1Fechado == 0:
+            if arq1Fechado == 0 and linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
                 # arq21 = open("Arquivo2-1.txt", 'a')
                 linhaDo1 = str(linhaDo1) + '\n'
                 arq.writelines(linhaDo1)
@@ -262,8 +270,9 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)):
                     linhaDo3 = 999
                 else:
                     linhaDo3 = int(linhaDo3)
-        arq.writelines('-\n')
-        arq.close()
+        if arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
+            arq.writelines('-\n')
+            arq.close()
         if i == 2:
             i = 0
         else:
