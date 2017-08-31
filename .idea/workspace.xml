@@ -24,13 +24,19 @@
       <file leaf-file-name="main" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
-              <folding>
-                <element signature="e#6888#7463#0" expanded="false" />
-                <element signature="e#6888#7463#0" expanded="false" />
-                <element signature="e#7561#8147#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Arquivo Primario.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo Primario.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1536">
+              <caret line="586" column="3" selection-start-line="586" selection-start-column="3" selection-end-line="586" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -38,8 +44,8 @@
       <file leaf-file-name="Arquivo1-1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state relative-caret-position="-108">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,7 +54,7 @@
       <file leaf-file-name="Arquivo1-2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4558">
+            <state relative-caret-position="-108">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -68,8 +74,8 @@
       <file leaf-file-name="Arquivo2-1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3936">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,13 +113,13 @@
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo.txt" />
         <option value="$USER_HOME$/PycharmProjects/GeradorAleatorio/main" />
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo Primario.txt" />
+        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-1.txt" />
+        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-2.txt" />
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-3.txt" />
-        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main" />
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-1.txt" />
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-2.txt" />
         <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-3.txt" />
-        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-2.txt" />
-        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-1.txt" />
+        <option value="$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main" />
       </list>
     </option>
   </component>
@@ -148,6 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,12 +189,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Coders/GitKraken.lnk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/GeradorAleatorio" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -372,7 +378,7 @@
     <frame x="1358" y="-8" width="1040" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2005988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.091816366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -381,7 +387,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.249501" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35582823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35582823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -407,33 +413,38 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
-          <line>166</line>
+          <line>183</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
-          <line>281</line>
+          <line>287</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
-          <line>80</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
-          <line>86</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
           <line>97</line>
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
-          <line>174</line>
-          <option name="timeStamp" value="62" />
+          <line>104</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
+          <line>115</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
+          <line>126</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main</url>
+          <line>191</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -443,7 +454,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="63" />
+      <option name="time" value="77" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -452,11 +463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -512,11 +519,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -572,11 +575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -639,11 +638,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -713,11 +708,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,10 +795,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo Primario.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1588">
-          <caret line="596" column="3" selection-start-line="596" selection-start-column="3" selection-end-line="596" selection-end-column="3" />
+        <state relative-caret-position="-1536">
+          <caret line="586" column="3" selection-start-line="586" selection-start-column="3" selection-end-line="586" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -828,47 +851,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4558">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo1-1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/Arquivo2-1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3936">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TrabalhoOrdenaçãoEmMemóriaExterna/main">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
-          <folding>
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#6888#7463#0" expanded="false" />
-            <element signature="e#7561#8147#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

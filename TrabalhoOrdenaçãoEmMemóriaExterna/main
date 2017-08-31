@@ -1,10 +1,29 @@
-import math
+'''@package TrabalhoOrdenaçãoEmMemóriaExterna
+Este código faz a intercalação balanceada de 3 caminhos, utilizando:
+- 1 fita com dados de entrada
+- 6 fitas auxiliares
 
-########################
+O código é dividido em três partes:
 
-chegou = False
-cont = 0
-i = 0
+Parte 1:
+O arquivo com os dados de entrada é divido em blocos de 3 e colocado nas 3 primeiras fitas, sendo que cada bloco está ordenado
+
+A parte 2 e parte 3 estão em um loop no qual é chamado de passada, esse loop é executado enquanto o número de passadas não alcança o resultado de um calculo de log
+
+Parte 2:
+Os registros até o separador de cada arquivo (que no nosso caso é " - "), é considerado um bloco, esses blocos são ordenados e colocado nos próximos 3 arquivos
+
+Parte 3:
+Os blocos são ordenados e colocados nos 3 primeiros arquivos, assim como na parte 2.
+
+O programa termina com todos os registros ordenados em uma fita
+'''
+
+import math ## Importa biblioteca matematica
+
+chegou = False ## Variavel para verificar o fim da parte 1
+cont = 0  ## Contador para limitar a parte 1
+i = 0     ##
 bolaDaVez = ["Arquivo1-1.txt", "Arquivo1-2.txt", "Arquivo1-3.txt"]
 a = ["Arquivo2-1.txt", "Arquivo2-2.txt", "Arquivo2-3.txt"]
 vetAux = []  ## VETOR AUXILIAR PARA ORGANIZAR
@@ -57,9 +76,7 @@ f = 6 ## NUMERO DE FITAS
 
 passada = 0
 
-#print(math.log(n/m)/math.log(f))
-#print(math.ceil(math.log(n/m)/math.log(f)))
-while passada < 3 :
+while passada <= math.ceil(math.log(n/m)/math.log(f)) :
 
     ## PARTE 2
     arq1 = open("Arquivo1-1.txt", 'r')
@@ -182,15 +199,6 @@ while passada < 3 :
     arq12.close()
     arq13.close()
 
-    linhaDo1 = int(arq21.readline())
-    linhaDo2 = int(arq22.readline())
-    linhaDo3 = int(arq23.readline())
-    print("1 -- ", linhaDo1)
-    print("2 -- ", linhaDo2)
-    print("3 -- ", linhaDo3)
-
-    arq = open("Arquivo.txt", 'w')
-
     arq1Fechado = 0
     arq2Fechado = 0
     arq3Fechado = 0
@@ -229,10 +237,8 @@ while passada < 3 :
 
         while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
             if arq1Fechado == 0 and linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
-                # arq21 = open("Arquivo2-1.txt", 'a')
                 linhaDo1 = str(linhaDo1) + '\n'
                 arq.writelines(linhaDo1)
-                # arq21.close()
                 linhaDo1 = arq21.readline()
                 if linhaDo1 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
                     arq1.close()
@@ -251,7 +257,7 @@ while passada < 3 :
                 if linhaDo2 == '-\n':
                     linhaDo2 = 999
                     arq2Fechado = 1
-                if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NAO ABRI-LO DE NOVO
                     arq2.close()
                     arq2Fechado = 2
                     linhaDo2 = 999
@@ -279,7 +285,7 @@ while passada < 3 :
             i += 1
     ##########
 
-    print("CHEGOU NO FINAL DO 3")
+    print("CHEGOU NO FINAL DO 3\n")
     '''
     while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
         if linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
