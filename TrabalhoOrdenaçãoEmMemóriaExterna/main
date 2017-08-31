@@ -86,11 +86,12 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
             ## PARTE 2
 
     '''
-
+    
+    ## Abre os arquivos para leitura
     arq1 = open(bolaDaVez[0], 'r')
     arq2 = open(bolaDaVez[1], 'r')
     arq3 = open(bolaDaVez[2], 'r')
-
+    ## Abre e fecha as 3 primeiras fitas para zera-las
     arq21 = open(a[0], 'w')
     arq22 = open(a[1], 'w')
     arq23 = open(a[2], 'w')
@@ -105,15 +106,19 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
     ## Se arqFechado = 0 - A variavel percorre o arquivo
     ## Se arqFechado = 1 - A variavel encontrou um separador de blocos, entao ela tera que esperar as outras chegarem tambem para voltarem a ser 0
     ## Se arqFechado = 2 - A variavel chegou no final do arquivo
+    
+    ## LinhaDo1 - Variavel que percorre o arquivo 1 dos 3 a ser comparados
+    ## LinhaDo2 - Variavel que percorre o arquivo 2 dos 3 a ser comparados
+    ## LinhaDo3 - Variavel que percorre o arquivo 3 dos 3 a ser comparados
 
     i = 0                                                   ## Setando o indice para 0
     while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
         arq21 = open(a[i], 'a')
 
         linhaDo1 = arq1.readline()                          ## Le a linha do primeiro arquivo
-        if linhaDo1 == '-\n':
+        if linhaDo1 == '-\n':                               
             linhaDo1 = arq1.readline()
-        if linhaDo1 != '':
+        if linhaDo1 != '':                                  ## Se for igual a '' quer dizer que chegou no final do arquivo
             linhaDo1 = int(linhaDo1)
             arq1Fechado = 0
         else:
@@ -124,7 +129,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
         linhaDo2 = arq2.readline()                          ## Le a linha do segundo arquivo
         if linhaDo2 == '-\n':
             linhaDo2 = arq2.readline()
-        if linhaDo2 != '':
+        if linhaDo2 != '':                                  ## Se for igual a '' quer dizer que chegou no final do arquivo
             linhaDo2 = int(linhaDo2)
             arq2Fechado = 0
         else:
@@ -132,10 +137,10 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
             arq2Fechado = 2
             linhaDo2 = 9000
         ####
-        linhaDo3 = arq3.readline()                          ## Le a linha do terceoro arquivo
+        linhaDo3 = arq3.readline()                          ## Le a linha do terceiro arquivo
         if linhaDo3 == '-\n':
             linhaDo3 = arq3.readline()
-        if linhaDo3 != '':
+        if linhaDo3 != '':                                  ## Se for igual a '' quer dizer que chegou no final do arquivo
             linhaDo3 = int(linhaDo3)
             arq3Fechado = 0
         else:
@@ -144,67 +149,67 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
             linhaDo3 = 9000
 
         while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0 :
-            if arq1Fechado == 0 and linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
-                linhaDo1 = str(linhaDo1) + '\n'
-                arq21.writelines(linhaDo1)
-                linhaDo1 = arq1.readline()
-                if linhaDo1 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+            if arq1Fechado == 0 and linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:        ## Se linhaDo1 for menor que linhaDo2 e linhaDo3:
+                linhaDo1 = str(linhaDo1) + '\n'             ## Converte para string e pula uma linha
+                arq21.writelines(linhaDo1)                  ## Escreve a linha no final do arquivo
+                linhaDo1 = arq1.readline()                  ## Le outra linha
+                if linhaDo1 == '':                          ## Se chegar no final do arquivo, nao abri-lo
                     arq1.close()
                     arq1Fechado = 2
                     linhaDo1 = 999
-                if linhaDo1 == "-\n":
-                    arq1Fechado = 1
-                    linhaDo1 = 999
+                if linhaDo1 == "-\n":                       ## Se chegar no final do bloco
+                    arq1Fechado = 1                         ## ArqFechado = 1, para nao entrar mais nesse bloco
+                    linhaDo1 = 999                          ## Atribui um valor alto a linha, para continuar as comparacoes
                 else:
-                    linhaDo1 = int(linhaDo1)
-            if arq2Fechado == 0 and linhaDo2 < linhaDo1 and linhaDo2 < linhaDo3:
-                linhaDo2 = str(linhaDo2) + '\n'  # TRANSFORMANDO NOVAMENTE PARA STRING PARA JOGAR PARA O ARQUIVO (SACO)
-                arq21.writelines(linhaDo2)
-                linhaDo2 = arq2.readline()
-                cont = 0
-                if linhaDo2 == '-\n':
-                    linhaDo2 = 999
-                    arq2Fechado = 1
-                if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                    linhaDo1 = int(linhaDo1)                ## Se nao, converta para inteiro, para continuar as comparacoes
+            if arq2Fechado == 0 and linhaDo2 < linhaDo1 and linhaDo2 < linhaDo3:        ## Se linhaDo2 for menor que linhaDo1 e linhaDo3:
+                linhaDo2 = str(linhaDo2) + '\n'             ## Converte para string e pula uma linha
+                arq21.writelines(linhaDo2)                  ## Escreve a linha no final do arquivo
+                linhaDo2 = arq2.readline()                  ## Le outra linha
+                if linhaDo2 == '':                          ## Se chegar no final do arquivo, nao abri-lo
                     arq2.close()
                     arq2Fechado = 2
                     linhaDo2 = 999
+                if linhaDo2 == '-\n':                       ## Se chegar no final do bloco      
+                    linhaDo2 = 999                          ## Atribui um valor alto a linha, para continuar as comparacoes
+                    arq2Fechado = 1                         ## ArqFechado = 1, para nao entrar mais nesse bloco
                 else:
-                    linhaDo2 = int(linhaDo2)
-            if arq3Fechado == 0 and linhaDo3 < linhaDo1 and linhaDo3 < linhaDo2:
-                linhaDo3 = str(linhaDo3) + '\n'
-                arq21.writelines(linhaDo3)
-                linhaDo3 = arq3.readline()
-                if linhaDo3 == "-\n":
-                    linhaDo3 = 999
-                    arq3Fechado = 1
-                if linhaDo3 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                    linhaDo2 = int(linhaDo2)                ## Se nao, converta para inteiro, para continuar as comparacoes
+            if arq3Fechado == 0 and linhaDo3 < linhaDo1 and linhaDo3 < linhaDo2:        ## Se linhaDo3 for menor que linhaDo1 e linhaDo2:
+                linhaDo3 = str(linhaDo3) + '\n'             ## Converte para string e pula uma linha
+                arq21.writelines(linhaDo3)                  ## Escreve a linha no final do arquivo
+                linhaDo3 = arq3.readline()                  ## Le outra linha
+                if linhaDo3 == '':                          ## Se chegar no final do arquivo, nao abri-lo
                     arq3.close()
                     arq3Fechado = 2
                     linhaDo3 = 999
+                if linhaDo3 == "-\n":                       ## Se chegar no final do bloco 
+                    linhaDo3 = 999                          ## Atribui um valor alto a linha, para continuar as comparacoes
+                    arq3Fechado = 1                         ## ArqFechado = 1, para nao entrar mais nesse bloco
                 else:
-                    linhaDo3 = int(linhaDo3)
-        if arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
-            arq21.writelines('-\n')
+                    linhaDo3 = int(linhaDo3)                ## Se nao, converta para inteiro, para continuar as comparacoes
+        if arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:          ## Se nao estiver chegado no final dos 3 arquivos:
+            arq21.writelines('-\n')                         ## Escreva o separador do bloco
             arq21.close()
-        if i == 2:
+        if i == 2:                                          ## Mudanca de indice para mudar de arquivo destino
             i = 0
         else:
             i += 1
 
     print("CHEGOU NO FINAL DO 2")
 
-    ## PARTE 3
+    '''
+        ## PARTE 3
 
-    ## ABRE OS ARQUIVOS PARA LEITURA
-    arq21 = open("Arquivo2-1.txt", 'r')
-    arq22 = open("Arquivo2-2.txt", 'r')
-    arq23 = open("Arquivo2-3.txt", 'r')
-    arroz = 0
-    ## ABRE E FECHA AS 3 PRIMEIRAS FITAS PARA ZERA-LAS
-    arq11 = open("Arquivo1-1.txt", 'w')
-    arq12 = open("Arquivo1-2.txt", 'w')
-    arq13 = open("Arquivo1-3.txt", 'w')
+    '''
+    ## Abre os arquivos para leitura
+    arq21 = open(a[0], 'r')
+    arq22 = open(a[1], 'r')
+    arq23 = open(a[2], 'r')
+    ## Abre e fecha as 3 primeiras fitas para zera-las
+    arq11 = open(bolaDaVez[0], 'w')
+    arq12 = open(bolaDaVez[1], 'w')
+    arq13 = open(bolaDaVez[2], 'w')
 
     arq11.close()
     arq12.close()
@@ -213,9 +218,9 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
     arq1Fechado = 0
     arq2Fechado = 0
     arq3Fechado = 0
-    i = 0
+    i = 0                                                    ## Setando o indice para 0 
 
-    ############
+    ## Mesma logica da parte 2
     while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
         arq = open(bolaDaVez[i], 'a')
 
@@ -251,7 +256,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
                 linhaDo1 = str(linhaDo1) + '\n'
                 arq.writelines(linhaDo1)
                 linhaDo1 = arq21.readline()
-                if linhaDo1 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                if linhaDo1 == '': 
                     arq1.close()
                     arq1Fechado = 2
                     linhaDo1 = 999
@@ -261,14 +266,14 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
                 else:
                     linhaDo1 = int(linhaDo1)
             if arq2Fechado == 0 and linhaDo2 < linhaDo1 and linhaDo2 < linhaDo3:
-                linhaDo2 = str(linhaDo2) + '\n'  # TRANSFORMANDO NOVAMENTE PARA STRING PARA JOGAR PARA O ARQUIVO (SACO)
+                linhaDo2 = str(linhaDo2) + '\n'  
                 arq.writelines(linhaDo2)
                 linhaDo2 = arq22.readline()
                 cont = 0
                 if linhaDo2 == '-\n':
                     linhaDo2 = 999
                     arq2Fechado = 1
-                if linhaDo2 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NAO ABRI-LO DE NOVO
+                if linhaDo2 == '':  
                     arq2.close()
                     arq2Fechado = 2
                     linhaDo2 = 999
@@ -281,7 +286,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
                 if linhaDo3 == "-\n":
                     linhaDo3 = 999
                     arq3Fechado = 1
-                if linhaDo3 == '':  ## SE CHEGAR NO FINAL DE UM ARQUIVO, NÃO ABRI-LO DE NOVO
+                if linhaDo3 == '':  
                     arq3.close()
                     arq3Fechado = 2
                     linhaDo3 = 999
@@ -294,42 +299,8 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passa
             i = 0
         else:
             i += 1
-    ##########
+    ##    
 
     print("CHEGOU NO FINAL DO 3\n")
-    '''
-    while arq1Fechado == 0 or arq2Fechado == 0 or arq3Fechado == 0:
-        if linhaDo1 < linhaDo2 and linhaDo1 < linhaDo3:
-            linhaDo1 = str(linhaDo1) + '\n'
-            arq.writelines(linhaDo1)
-            linhaDo1 = arq21.readline()
-            print("1:::", linhaDo1)
-            if linhaDo1 == '':
-                arq1Fechado = 1
-                linhaDo1 = 999
-            else:
-                linhaDo1 = int(linhaDo1)
-
-        if linhaDo2 < linhaDo1 and linhaDo2 < linhaDo3:
-            linhaDo2 = str(linhaDo2) + '\n'
-            arq.writelines(linhaDo2)
-            linhaDo2 = arq22.readline()
-            print("2:::", linhaDo2)
-            if linhaDo2 == '':
-                arq2Fechado = 1
-                linhaDo2 = 999
-            else:
-                linhaDo2 = int(linhaDo2)
-        if linhaDo3 < linhaDo1 and linhaDo3 < linhaDo2:
-            linhaDo3 = str(linhaDo3) + '\n'
-            arq.writelines(linhaDo3)
-            linhaDo3 = arq23.readline()
-            print("3:::", linhaDo3)
-            if linhaDo3 == '':
-                arq3Fechado = 1
-                linhaDo3 = 999
-            else:
-                linhaDo3 = int(linhaDo3)
-    arq.close()
-'''
-    passada += 1
+    
+    passada += 1                                                   ## Incrementa +1  na passada
