@@ -24,25 +24,26 @@ import math ## Importa biblioteca matematica
 chegou = False ## Variavel para verificar o fim da parte 1
 cont = 0  ## Contador para limitar a parte 1
 i = 0     ##
-bolaDaVez = ["Arquivo1-1.txt", "Arquivo1-2.txt", "Arquivo1-3.txt"]
-a = ["Arquivo2-1.txt", "Arquivo2-2.txt", "Arquivo2-3.txt"]
+bolaDaVez = ["Arquivo1-1.txt", "Arquivo1-2.txt", "Arquivo1-3.txt"]         ## Vetor com o nome dos 3 primeiros arquivos
+a = ["Arquivo2-1.txt", "Arquivo2-2.txt", "Arquivo2-3.txt"]                 ## Vetor com o nome dos 3 segundos arquivos
 vetAux = []  ## VETOR AUXILIAR PARA ORGANIZAR
 ## ABRE TODOS OS PRIMEIROS ARQUIVOS AUXILIARES EM BRANCO
-arq1 = open("Arquivo1-1.txt", 'w')
-arq2 = open("Arquivo1-2.txt", 'w')
-arq3 = open("Arquivo1-3.txt", 'w')
+arq1 = open(bolaDaVez[0], 'w')
+arq2 = open(bolaDaVez[1], 'w')
+arq3 = open(bolaDaVez[2], 'w')
 ## FECHA
 arq1.close()
 arq2.close()
 arq3.close()
+"""
+        ## PARTE 1
 
-## PARTE 1
-
-arquivoOriginal = open("Arquivo Primario.txt")  ## ABRE O ARQUIVO A SER ORGANIZADO
+"""
+arquivoOriginal = open("Arquivo Primario.txt")              ## ABRE O ARQUIVO A SER ORGANIZADO
 
 while chegou == False:
-    linha = arquivoOriginal.readline()  ## LE CADA LINHA DO ARQUIVO ORIGINAL
-    if linha == '':  ## SE A LINHA ATUAL É O FINAL, PARE
+    linha = arquivoOriginal.readline()                      ## LE CADA LINHA DO ARQUIVO ORIGINAL
+    if linha == '':                                         ## SE A LINHA ATUAL É O FINAL, PARE
         chegou = True
         vetAux.sort()
         arq = open(bolaDaVez[i], 'a')
@@ -55,37 +56,44 @@ while chegou == False:
             cont += 1
         else:
             vetAux.append(linha)
-            vetAux.sort()
-            arq = open(bolaDaVez[i], 'a')  ## ABRE PARA ATUALIZAR
-            vetAux.append('-\n')
-            arq.writelines(vetAux)  ## ESCREVE O VETOR AUXILIAR NO FINAL DO ARQUIVO
+            vetAux.sort()                                   ## Ordena o vetor auxiliar depois de os registros inseridos
+            arq = open(bolaDaVez[i], 'a')                   ## Abre o arquivo para atualizar
+            vetAux.append('-\n')                            ## Insere um separador de blocos
+            arq.writelines(vetAux)                          ## Escreve o vetor auxiliar no final do arquivo
             arq.close()
             cont = 0
-            vetAux.clear()  ##LIMPA O VETOR AUXILIAR
-            if i == 2:
+            vetAux = []                                     ## Limpa o vetor auxiliar
+            if i == 2:                                      ## Muda o indice para mudar de arquivo
                 i = 0
             else:
                 i += 1
 
 arquivoOriginal.close()
 
+'''
+        ## INICIO DAS PASSADAS
 
-n = 173 ## NUMERO DE REGISTROS
-m = 3 ##
-f = 6 ## NUMERO DE FITAS
+'''
 
-passada = 0
+n = 720                                                     ## Numero total de registros
+m = 3                                                       ## Numero de registros no primeiro bloco
+f = 6                                                       ## Numero de fitas
 
-while passada <= math.ceil(math.log(n/m)/math.log(f)) :
+passada = 0                                                 ## Comeco das passadas
 
-    ## PARTE 2
-    arq1 = open("Arquivo1-1.txt", 'r')
-    arq2 = open("Arquivo1-2.txt", 'r')
-    arq3 = open("Arquivo1-3.txt", 'r')
+while passada <= math.ceil(math.log(n/m)/math.log(f)) :     ## Enquanto as passadas nao alcancar o calculo, faca:
+    '''
+            ## PARTE 2
 
-    arq21 = open("Arquivo2-1.txt", 'w')
-    arq22 = open("Arquivo2-2.txt", 'w')
-    arq23 = open("Arquivo2-3.txt", 'w')
+    '''
+
+    arq1 = open(bolaDaVez[0], 'r')
+    arq2 = open(bolaDaVez[1], 'r')
+    arq3 = open(bolaDaVez[2], 'r')
+
+    arq21 = open(a[0], 'w')
+    arq22 = open(a[1], 'w')
+    arq23 = open(a[2], 'w')
     arq21.close()
     arq22.close()
     arq23.close()
@@ -94,12 +102,15 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :
     arq2Fechado = 0
     arq3Fechado = 0
 
-    # 2
-    i = 0
+    ## Se arqFechado = 0 - A variavel percorre o arquivo
+    ## Se arqFechado = 1 - A variavel encontrou um separador de blocos, entao ela tera que esperar as outras chegarem tambem para voltarem a ser 0
+    ## Se arqFechado = 2 - A variavel chegou no final do arquivo
+
+    i = 0                                                   ## Setando o indice para 0
     while arq1Fechado != 2 and arq2Fechado != 2 and arq3Fechado != 2:
         arq21 = open(a[i], 'a')
 
-        linhaDo1 = arq1.readline()
+        linhaDo1 = arq1.readline()                          ## Le a linha do primeiro arquivo
         if linhaDo1 == '-\n':
             linhaDo1 = arq1.readline()
         if linhaDo1 != '':
@@ -110,7 +121,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :
             arq1Fechado = 2
             linhaDo1 = 9000
         #####
-        linhaDo2 = arq2.readline()
+        linhaDo2 = arq2.readline()                          ## Le a linha do segundo arquivo
         if linhaDo2 == '-\n':
             linhaDo2 = arq2.readline()
         if linhaDo2 != '':
@@ -121,7 +132,7 @@ while passada <= math.ceil(math.log(n/m)/math.log(f)) :
             arq2Fechado = 2
             linhaDo2 = 9000
         ####
-        linhaDo3 = arq3.readline()
+        linhaDo3 = arq3.readline()                          ## Le a linha do terceoro arquivo
         if linhaDo3 == '-\n':
             linhaDo3 = arq3.readline()
         if linhaDo3 != '':
