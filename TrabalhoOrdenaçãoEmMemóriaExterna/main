@@ -1,20 +1,20 @@
-'''@package TrabalhoOrdenaçãoEmMemóriaExterna
-Este código faz a intercalação balanceada de 3 caminhos, utilizando:
+'''@package TrabalhoOrdenacaoEmMemoriaExterna
+Este codigo faz a intercalacao balanceada de 3 caminhos, utilizando:
 - 1 fita com dados de entrada
 - 6 fitas auxiliares
 
-O código é dividido em três partes:
+O codigo eh dividido em tres partes:
 
 Parte 1:
-O arquivo com os dados de entrada é divido em blocos de 3 e colocado nas 3 primeiras fitas, sendo que cada bloco está ordenado
+O arquivo com os dados de entrada eh divido em blocos de 3 e colocado nas 3 primeiras fitas, sendo que cada bloco esta ordenado
 
-A parte 2 e parte 3 estão em um loop no qual é chamado de passada, esse loop é executado enquanto o número de passadas não alcança o resultado de um calculo de log
+A parte 2 e parte 3 estao em um loop no qual eh chamado de passada, esse loop eh executado enquanto o numero de passadas nao alcanca o resultado de um calculo de log
 
 Parte 2:
-Os registros até o separador de cada arquivo (que no nosso caso é " - "), é considerado um bloco, esses blocos são ordenados e colocado nos próximos 3 arquivos
+Os registros ate o separador de cada arquivo (que no nosso caso eh " - "), eh considerado um bloco, esses blocos sao ordenados e colocado nos proximos 3 arquivos
 
 Parte 3:
-Os blocos são ordenados e colocados nos 3 primeiros arquivos, assim como na parte 2.
+Os blocos sao ordenados e colocados nos 3 primeiros arquivos, assim como na parte 2.
 
 O programa termina com todos os registros ordenados em uma fita
 '''
@@ -43,7 +43,7 @@ arquivoOriginal = open("Arquivo Primario.txt")              ## ABRE O ARQUIVO A 
 
 while chegou == False:
     linha = arquivoOriginal.readline()                      ## LE CADA LINHA DO ARQUIVO ORIGINAL
-    if linha == '':                                         ## SE A LINHA ATUAL É O FINAL, PARE
+    if linha == '':                                         ## SE A LINHA ATUAL eh O FINAL, PARE
         chegou = True
         vetAux.sort()
         arq = open(bolaDaVez[i], 'a')
