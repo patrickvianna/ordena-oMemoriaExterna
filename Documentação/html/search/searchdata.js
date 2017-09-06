@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "abcfilmnpv",
+  0: "m",
   1: "m",
   2: "m",
-  3: "abcfilmnpv"
+  3: "m"
 };
 
 var indexSectionNames =
@@ -11,7 +11,7 @@ var indexSectionNames =
   0: "all",
   1: "namespaces",
   2: "files",
-  3: "variables"
+  3: "functions"
 };
 
 var indexSectionLabels =
@@ -19,6 +19,6 @@ var indexSectionLabels =
   0: "Todos",
   1: "Namespaces",
   2: "Arquivos",
-  3: "Variáveis"
+  3: "Funções"
 };
 
